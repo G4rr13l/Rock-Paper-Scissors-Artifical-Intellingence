@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[ ]:
+
 
 
 from keras.layers import Dense,SimpleRNN,Input,LSTM
@@ -9,7 +9,7 @@ from keras.models import Model
 import numpy as np
 
 
-# In[ ]:
+
 
 
 bot=0
@@ -17,7 +17,6 @@ human=0
 base=[]
 
 
-# In[ ]:
 
 
 def ir(m):
@@ -48,7 +47,7 @@ def nell(m,num):
         return 0
 
 
-# In[ ]:
+
 
 
 a=np.zeros((30,3))
@@ -60,7 +59,6 @@ for i in range(30):
     print("your opponent said :", ir(m), "and",ell(m,num))
 
 
-# In[ ]:
 
 
 v=10
@@ -73,7 +71,7 @@ for i in range(h):
     chars_out[i,:]=a[i+v,:]
 
 
-# In[ ]:
+
 
 
 inp=Input(shape=(10,3))
@@ -84,19 +82,17 @@ model=Model(inp,net)
 model.compile(loss='categorical_crossentropy',metrics=['accuracy'],optimizer='adam')
 
 
-# In[ ]:
 
 
 model.fit(chars_in,chars_out,epochs=10)
 
 
-# In[ ]:
 
 
 base=a
 
 
-# In[ ]:
+
 
 
 while True:
